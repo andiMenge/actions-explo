@@ -1,4 +1,4 @@
-name: Re-usable Terraform Deploy
+name: _Re-usable Terraform Deploy
 
 on:
   workflow_dispatch:
