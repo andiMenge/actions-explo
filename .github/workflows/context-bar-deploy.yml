@@ -10,7 +10,7 @@ on:
 
 jobs:
   create-local-files:
-    name: Deploy to dev
+    name: Create local files
     runs-on: ubuntu-20.04
     steps:
       - name: Cache local files
