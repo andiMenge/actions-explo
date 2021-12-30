@@ -15,6 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Restore cached files
+        id: local-file-cache
+        uses: actions/cache@v2
+        with:
+          key: local-files
+          path: files
+
       - name: access file from cache
         env:
           CERT_PATH: ${{ inputs.certPath }}
