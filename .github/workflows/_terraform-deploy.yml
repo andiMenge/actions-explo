@@ -15,9 +15,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: access file from cache
-        with:
-          certPath: ${{ inputs.certPath }}
-        run: cat ${certPath}
+        env:
+          CERT_PATH: ${{ inputs.certPath }}
+        run: cat ${CERT_PATH}
 
       - name: access file from context folder
         run: cat bar/bar.txt
