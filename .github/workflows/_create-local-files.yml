@@ -1,0 +1,23 @@
+name: _Re-usable File creation
+
+# Workflows & jobs that run on different VMs can share files via the cache
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  create-local-files:
+    name: _Create local files
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Create local file cache
+        id: local-file-cache
+        uses: actions/cache@v2
+        with:
+          key: local-files
+          path: files
+
+      - name: create files
+        if: steps.local-file-cache.outputs.cache-hit != 'true'
+        run: mkdir ./files && echo "hello world" >> ./files/file-from-script.pem

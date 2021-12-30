@@ -11,18 +11,7 @@ on:
 jobs:
   create-local-files:
     name: Create local files
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Cache local files
-        id: local-file-cache
-        uses: actions/cache@v2
-        with:
-          key: local-files
-          path: files
-
-      - name: create files
-        if: steps.local-file-cache.outputs.cache-hit != 'true'
-        run: mkdir ./files && echo "hello world" >> ./files/file-from-script.pem
+    uses: andiMenge/actions-explo/.github/workflows/_create-local-files.yml@main
 
   call-terraform-deploy:
     name: Call the _terraform-deploy re-usable workflow
