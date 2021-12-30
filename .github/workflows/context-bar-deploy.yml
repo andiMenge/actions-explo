@@ -15,7 +15,7 @@ jobs:
 
   call-terraform-deploy:
     name: Call the _terraform-deploy re-usable workflow
-    needs: create-local-files
+    needs: call-create-local-files
     uses: andiMenge/actions-explo/.github/workflows/_terraform-deploy.yml@main
     with:
       certPath: "./files/file-from-script.pem"
