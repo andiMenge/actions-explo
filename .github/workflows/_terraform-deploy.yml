@@ -19,7 +19,7 @@ jobs:
         id: local-file-cache
         uses: actions/cache@v2
         with:
-          key: local-files
+          key: local-files-v1
           path: files
 
       - name: print cert path
