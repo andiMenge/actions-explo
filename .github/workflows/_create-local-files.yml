@@ -8,7 +8,7 @@ on:
 
 jobs:
   create-local-files:
-    name: _Create local files
+    name: Create local files
     runs-on: ubuntu-20.04
     steps:
       - name: Create local file cache
@@ -18,6 +18,6 @@ jobs:
           key: local-files
           path: files
 
-      - name: create files
+      - name: create files in cache dir
         if: steps.local-file-cache.outputs.cache-hit != 'true'
         run: mkdir ./files && echo "hello world" >> ./files/file-from-script.pem

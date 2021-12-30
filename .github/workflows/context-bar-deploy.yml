@@ -9,7 +9,7 @@ on:
       - 'bar/**'
 
 jobs:
-  create-local-files:
+  call-create-local-files:
     name: Create local files
     uses: andiMenge/actions-explo/.github/workflows/_create-local-files.yml@main
 

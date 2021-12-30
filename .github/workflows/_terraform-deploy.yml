@@ -9,7 +9,7 @@ on:
         type: string
 
 jobs:
-  reusable-terraform-deploy:
+  terraform-deploy:
     name: Re-usable terraform deploy
     runs-on: ubuntu-20.04
     steps:
