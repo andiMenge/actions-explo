@@ -1,0 +1,23 @@
+name: deploy terraform
+
+on:
+  workflow_call:
+    inputs:
+      certPath:
+        required: true
+        type: string
+
+jobs:
+  reusable-terraform-deploy:
+    name: Re-usable terraform deploy
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: access file from cache
+        with:
+          certPath: ${{ inputs.certPath }}
+        run: cat ${certPath}
+
+      - name: access file from context folder
+        run: cat bar/bar.txt
