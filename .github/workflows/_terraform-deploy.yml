@@ -22,6 +22,11 @@ jobs:
           key: local-files
           path: files
 
+      - name: print cert path
+        env:
+          CERT_PATH: ${{ inputs.certPath }}
+        run: echo ${CERT_PATH}
+
       - name: access file from cache
         env:
           CERT_PATH: ${{ inputs.certPath }}
