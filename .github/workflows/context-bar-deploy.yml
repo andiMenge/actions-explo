@@ -1,4 +1,4 @@
-name: Context Bar Terraform deploy
+name: Context Bar Infra Rollout
 
 on:
   workflow_dispatch:
