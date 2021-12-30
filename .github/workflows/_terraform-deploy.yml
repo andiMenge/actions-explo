@@ -1,6 +1,7 @@
 name: Re-usable Terraform Deploy
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       certPath:
